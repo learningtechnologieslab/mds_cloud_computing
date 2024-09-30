@@ -1,5 +1,6 @@
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
+
 
 app = Flask(__name__)
 
@@ -37,6 +38,31 @@ the browser will display: Hello, Bob!
 def hello(name):
     return render_template('hello.html', name=name)
 
+@app.route('/varialbes/<some_variable>')
+def varialbes(some_variable):
+    return render_template('variables.html', some_variable=some_variable)
 
 
-app.run()
+@app.route('/if_example/<condition>')
+def if_example(condition):
+    return render_template('if_example.html', condition=condition)
+
+@app.route('/loop_example')
+def loop_example():
+    return render_template('loop_example.html')
+
+@app.route('/static_example')
+def static_example():
+    return render_template('static_example.html')
+
+@app.route('/form_example')
+def form_example():
+    return render_template('form_example.html')
+
+@app.route('/submit_form_example', methods=['POST'])
+def submit_form_example():
+    form_data = request.form['sample_form_data']
+    return f"Data received: {form_data}"
+
+
+app.run(debug=True)

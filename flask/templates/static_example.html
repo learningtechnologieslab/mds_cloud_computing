@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+    <title>Static Content Example</title> 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head> 
+<body> 
+    <p>
+        Contents of a paragraph tag are now formatted using the styles (CSS)
+        specified in /static/style.css
+    </p> 
+
+    
+    The image below is embedded into this page from the /static/images subfolder.<br />
+    <img src="{{ url_for('static', filename='images/sci_logo.png') }}" />
+</body> 
+</html>
