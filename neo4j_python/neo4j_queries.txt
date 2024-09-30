@@ -1,0 +1,39 @@
+CREATE (a:Airport { id: 2, code: 'JFK', name: 'JFK International Airport'})
+RETURN a
+
+MATCH (a:Airport) RETURN a.airport_id, a.name, a.code;
+
+
+MATCH (a:Airport) RETURN a;
+
+MATCH (a1:Airport),(a2:Airport)
+WHERE a1.code = 'PIT' and a2.code = 'JFK'
+CREATE (a1)-[f1:FLIES_TO]->(a2)
+CREATE (a1)<-[f2:FLIES_TO]-(a2)
+RETURN a1, a2, f1, f2
+
+
+MATCH(a:Airport) WHERE a.code = 'PIT' RETURN a;
+
+
+MATCH(a:Airport {code: 'PIT'})  RETURN a;
+
+CREATE (c:Customer { id: 2, first_name: 'Bob', last_name: 'Perkoski'})
+
+MATCH(a:Airport), (c:Customer) return a, c;
+
+
+CREATE (f:Flight { id: 1, origin: 'PIT', destination: 'JFK'})
+
+
+MATCH (c:Customer),(f:Flight)
+WHERE c.first_name = 'Bob' and f.id = 1
+CREATE (c)-[r:HAS_RESERVATION]->(f)
+RETURN c, f;
+
+MATCH(a1:Airport),(a2:Airport),(f:Flight) WHERE a1.code='PIT' and a2.code='JFK' and f.id = 1 CREATE (a1)-[f1:ORIGINATES]->(f) CREATE (a2)<-[f2:ARRIVES_AT]-(f) RETURN a1, a2, f;
+
+MATCH(a:Airport),(c:Customer),(f:Flight) RETURN a, c, f;
+
+
+MATCH(a:Airport) DETACH DELETE a;
