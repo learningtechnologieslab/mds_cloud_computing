@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask import render_template
+from flask_debugtoolbar import DebugToolbarExtension
 
 
 app = Flask(__name__)
@@ -11,6 +12,7 @@ def index():
 @app.route('/about')
 def about():
 	return "This is the About page."
+
 
 
 '''
@@ -63,6 +65,5 @@ def form_example():
 def submit_form_example():
     form_data = request.form['sample_form_data']
     return f"Data received: {form_data}"
-
 
 app.run(debug=True)
