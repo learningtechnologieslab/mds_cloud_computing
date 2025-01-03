@@ -1,0 +1,2 @@
+Hadoop MapReduce is simple with Python
+Python makes MapReduce jobs easier
