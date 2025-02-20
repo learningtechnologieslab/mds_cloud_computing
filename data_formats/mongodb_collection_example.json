@@ -1,0 +1,107 @@
+[
+  {
+    "_id": "U1001",
+    "first_name": "Alice",
+    "last_name": "Johnson",
+    "age": 21,
+    "major": "Computer Science",
+    "year": "Junior",
+    "gpa": 3.8,
+    "courses": [
+      {
+        "course_id": "CS101",
+        "course_name": "Introduction to Programming",
+        "credits": 3
+      },
+      {
+        "course_id": "CS202",
+        "course_name": "Data Structures",
+        "credits": 4
+      }
+    ]
+  },
+  {
+    "_id": "U1002",
+    "first_name": "Bob",
+    "last_name": "Smith",
+    "age": 22,
+    "major": "Electrical Engineering",
+    "year": "Senior",
+    "gpa": 3.6,
+    "courses": [
+      {
+        "course_id": "EE301",
+        "course_name": "Circuit Analysis",
+        "credits": 4
+      },
+      {
+        "course_id": "EE405",
+        "course_name": "Digital Signal Processing",
+        "credits": 3
+      }
+    ]
+  },
+  {
+    "_id": "U1003",
+    "first_name": "Charlie",
+    "last_name": "Lee",
+    "age": 20,
+    "major": "Mathematics",
+    "year": "Sophomore",
+    "gpa": 3.9,
+    "courses": [
+      {
+        "course_id": "MATH210",
+        "course_name": "Linear Algebra",
+        "credits": 3
+      },
+      {
+        "course_id": "MATH350",
+        "course_name": "Probability and Statistics",
+        "credits": 3
+      }
+    ]
+  },
+  {
+    "_id": "U1004",
+    "first_name": "David",
+    "last_name": "Williams",
+    "age": 23,
+    "major": "Business Administration",
+    "year": "Senior",
+    "gpa": 3.5,
+    "courses": [
+      {
+        "course_id": "BUS101",
+        "course_name": "Principles of Management",
+        "credits": 3
+      },
+      {
+        "course_id": "BUS305",
+        "course_name": "Marketing Strategies",
+        "credits": 3
+      }
+    ]
+  },
+  {
+    "_id": "U1005",
+    "first_name": "Emma",
+    "last_name": "Garcia",
+    "age": 19,
+    "major": "Biology",
+    "year": "Freshman",
+    "gpa": 3.7,
+    "courses": [
+      {
+        "course_id": "BIO101",
+        "course_name": "General Biology",
+        "credits": 4
+      },
+      {
+        "course_id": "CHEM150",
+        "course_name": "Organic Chemistry",
+        "credits": 4
+      }
+    ]
+  }
+]

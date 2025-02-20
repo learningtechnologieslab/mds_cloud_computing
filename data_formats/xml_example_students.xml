@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<university>
+    <students>
+        <student>
+            <student_id>U1001</student_id>
+            <first_name>Alice</first_name>
+            <last_name>Johnson</last_name>
+            <age>21</age>
+            <major>Computer Science</major>
+            <year>Junior</year>
+            <gpa>3.8</gpa>
+            <courses>
+                <course>
+                    <course_id>CS101</course_id>
+                    <course_name>Introduction to Programming</course_name>
+                    <credits>3</credits>
+                </course>
+                <course>
+                    <course_id>CS202</course_id>
+                    <course_name>Data Structures</course_name>
+                    <credits>4</credits>
+                </course>
+            </courses>
+        </student>
+        <student>
+            <student_id>U1002</student_id>
+            <first_name>Bob</first_name>
+            <last_name>Smith</last_name>
+            <age>22</age>
+            <major>Electrical Engineering</major>
+            <year>Senior</year>
+            <gpa>3.6</gpa>
+            <courses>
+                <course>
+                    <course_id>EE301</course_id>
+                    <course_name>Circuit Analysis</course_name>
+                    <credits>4</credits>
+                </course>
+                <course>
+                    <course_id>EE405</course_id>
+                    <course_name>Digital Signal Processing</course_name>
+                    <credits>3</credits>
+                </course>
+            </courses>
+        </student>
+        <student>
+            <student_id>U1003</student_id>
+            <first_name>Charlie</first_name>
+            <last_name>Lee</last_name>
+            <age>20</age>
+            <major>Mathematics</major>
+            <year>Sophomore</year>
+            <gpa>3.9</gpa>
+            <courses>
+                <course>
+                    <course_id>MATH210</course_id>
+                    <course_name>Linear Algebra</course_name>
+                    <credits>3</credits>
+                </course>
+                <course>
+                    <course_id>MATH350</course_id>
+                    <course_name>Probability and Statistics</course_name>
+                    <credits>3</credits>
+                </course>
+            </courses>
+        </student>
+        <student>
+            <student_id>U1004</student_id>
+            <first_name>David</first_name>
+            <last_name>Williams</last_name>
+            <age>23</age>
+            <major>Business Administration</major>
+            <year>Senior</year>
+            <gpa>3.5</gpa>
+            <courses>
+                <course>
+                    <course_id>BUS101</course_id>
+                    <course_name>Principles of Management</course_name>
+                    <credits>3</credits>
+                </course>
+                <course>
+                    <course_id>BUS305</course_id>
+                    <course_name>Marketing Strategies</course_name>
+                    <credits>3</credits>
+                </course>
+            </courses>
+        </student>
+        <student>
+            <student_id>U1005</student_id>
+            <first_name>Emma</first_name>
+            <last_name>Garcia</last_name>
+            <age>19</age>
+            <major>Biology</major>
+            <year>Freshman</year>
+            <gpa>3.7</gpa>
+            <courses>
+                <course>
+                    <course_id>BIO101</course_id>
+                    <course_name>General Biology</course_name>
+                    <credits>4</credits>
+                </course>
+                <course>
+                    <course_id>CHEM150</course_id>
+                    <course_name>Organic Chemistry</course_name>
+                    <credits>4</credits>
+                </course>
+            </courses>
+        </student>
+    </students>
+</university>
