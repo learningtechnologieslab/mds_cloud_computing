@@ -1,19 +1,24 @@
+import os
 from pyspark.sql import SparkSession
 from pyspark.ml.feature import StringIndexer, VectorAssembler
 from pyspark.ml.classification import RandomForestClassifier
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 from pyspark.ml import Pipeline
 
+# Resolve base directory of this script
+base_dir = os.path.abspath(os.path.dirname(__file__))
+
+# Construct full input and output paths
+input_path = f"file://{os.path.join(base_dir, 'titanic.csv')}"
+output_path = os.path.join(base_dir, "output.txt")
+
 # Step 1: Initialize Spark session
-spark = SparkSession.builder \
-    .appName("TitanicRandomForest") \
-    .getOrCreate()
+spark = SparkSession.builder.appName("TitanicRandomForest").getOrCreate()
 
 # Step 2: Load dataset
-data_path = "file:///home/ubuntu/spark_jobs/titanic_rf/titanic.csv"
-df = spark.read.csv(data_path, header=True, inferSchema=True)
+df = spark.read.csv(input_path, header=True, inferSchema=True)
 
-# Step 3: Drop columns that are not useful
+# Step 3: Drop unnecessary columns
 df = df.drop("Name", "Cabin", "Ticket", "PassengerId")
 
 # Step 4: Drop rows with null values
@@ -29,10 +34,10 @@ assembler = VectorAssembler(
     outputCol="features"
 )
 
-# Step 7: Random Forest model
+# Step 7: Create Random Forest model
 rf = RandomForestClassifier(labelCol="Survived", featuresCol="features", numTrees=100)
 
-# Step 8: Pipeline
+# Step 8: Build pipeline
 pipeline = Pipeline(stages=[sex_indexer, embarked_indexer, assembler, rf])
 
 # Step 9: Train-test split
@@ -48,7 +53,9 @@ predictions = model.transform(test_data)
 evaluator = MulticlassClassificationEvaluator(labelCol="Survived", predictionCol="prediction", metricName="accuracy")
 accuracy = evaluator.evaluate(predictions)
 
-print(f"Random Forest Classification Accuracy: {accuracy:.2f}")
+# Write accuracy to output file
+with open(output_path, "w") as f:
+    f.write(f"Random Forest Classification Accuracy: {accuracy:.4f}\n")
 
 # Stop Spark
 spark.stop()
