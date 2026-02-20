@@ -1,0 +1,49 @@
+Usage Examples
+
+ORDERS
+Get all orders
+GET http://localhost:5000/api/orders
+Get a single order
+GET http://localhost:5000/api/orders/10100
+Create a new order
+POST http://localhost:5000/api/orders
+json{
+  "orderNumber": 10426,
+  "orderDate": "2026-02-20",
+  "requiredDate": "2026-03-01",
+  "shippedDate": null,
+  "status": "In Process",
+  "comments": "Priority customer request",
+  "customerNumber": 363
+}
+Update an order
+PUT http://localhost:5000/api/orders/10426
+json{
+  "status": "Shipped",
+  "shippedDate": "2026-02-25",
+  "comments": "Shipped via FedEx"
+}
+Delete an order (also deletes its details)
+DELETE http://localhost:5000/api/orders/10426
+
+ORDER DETAILS
+Get all details for an order
+GET http://localhost:5000/api/orders/10100/details
+Get a specific line item
+GET http://localhost:5000/api/orders/10100/details/3
+Add a new line item to an order
+POST http://localhost:5000/api/orders/10100/details
+json{
+  "orderLineNumber": 5,
+  "productCode": "S18_1749",
+  "quantityOrdered": 30,
+  "priceEach": 136.00
+}
+Update a line item
+PUT http://localhost:5000/api/orders/10100/details/5
+json{
+  "quantityOrdered": 45,
+  "priceEach": 130.50
+}
+Delete a line item
+DELETE http://localhost:5000/api/orders/10100/details/5
