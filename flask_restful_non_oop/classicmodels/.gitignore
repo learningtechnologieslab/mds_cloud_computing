@@ -1,0 +1,41 @@
+# Virtual environment
+.venv/
+venv/
+env/
+# Old virtual environment paths (optional)
+bin/
+include/
+lib/
+lib64/
+local/
+Scripts/
+pyvenv.cfg
+pip-selfcheck.json
+
+# Python cache and compiled files
+*.pyc
+__pycache__/
+*.pyd
+*.bin
+
+# Flask instance folder (contains sensitive or local config)
+instance/
+
+# Environment variables file
+.env
+.flaskenv
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Distribution and packaging
+dist/
+build/
+*.egg-info/
+
+# IDE specific files (e.g. PyCharm, VS Code)
+.idea/
+.vscode/
+
